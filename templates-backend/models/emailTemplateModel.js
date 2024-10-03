@@ -14,12 +14,14 @@ const emailTemplateSchema = new mongoose.Schema({
         type: String,
     },
 
-    
-
     emailbody: {
         type: String,
     },
-
+    files: [{
+        filename: { type: String, required: true },
+        path: { type: String, required: true },
+        size: { type: Number, required: true } // Add size field
+    }],
     active: {
         type: Boolean,
         default: true
