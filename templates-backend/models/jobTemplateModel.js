@@ -68,9 +68,9 @@ const jobTemplateSchema = new mongoose.Schema({
         //     return this.absolutedates;
         // }
     },
-    comments:{
+    comments:[{
         type: String
-    },
+    }],
     active: {
         type: Boolean,
         default: true

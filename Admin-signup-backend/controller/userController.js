@@ -29,7 +29,6 @@ const getUsers = async (req, res) => {
 };
 
 //GET a single User
-
 const getUser = async (req, res) => {
   const { id } = req.params;
 

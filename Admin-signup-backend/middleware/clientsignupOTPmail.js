@@ -1,6 +1,6 @@
 const express = require("express");
-const generateOTP = require("../../controllers/middlewares/randomStringGenerator");
-const OTP = require("./otpModel"); // Import the OTP model
+const generateOTP = require("../middleware/randomStringGenerator");
+const OTP = require("../models/otpModel"); // Import the OTP model
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
