@@ -10,13 +10,15 @@ const lineItemsSchema = new mongoose.Schema({
         type: String,
     },
     rate: {
-        type: Number,
+        // type: Number,
+        type: String,
     },
     quantity: {
         type: Number,
     },
     amount: {
-        type: Number,
+        // type: Number,
+        type: String,
     },
     tax: {
         type: Boolean,
@@ -86,6 +88,9 @@ const invoiceTemplateSchema = new mongoose.Schema({
     summary: {
         type: summarySchema,
     },
+    clientNote:{
+        type: String,
+    }
 
 }, { timestamps: true });
 

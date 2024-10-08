@@ -38,7 +38,7 @@ const getInvoiceTemplate = async (req, res) => {
 
 //POST a new InvoiceTemplate 
 const createInvoiceTemplate = async (req, res) => {
-    const { templatename, description, paymentMethod, sendEmailWhenInvCreated, messageForClient, payInvoicewithcredits, sendReminderstoClients, daysuntilnextreminder, numberOfreminder, lineItems, summary, active } = req.body;
+    const { templatename, description, paymentMethod, sendEmailWhenInvCreated, messageForClient, payInvoicewithcredits, sendReminderstoClients, daysuntilnextreminder, numberOfreminder, lineItems, summary,clientNote ,active } = req.body;
 
     try {
         const existingInvoiceTemplate = await InvoiceTemplate.findOne({
@@ -48,7 +48,7 @@ const createInvoiceTemplate = async (req, res) => {
         if (existingInvoiceTemplate) {
             return res.status(201).json({ message: "InvoiceTemplate already exists" });
         }
-        const newInvoiceTemplate = await InvoiceTemplate.create({ templatename, description, paymentMethod, sendEmailWhenInvCreated, messageForClient, payInvoicewithcredits, sendReminderstoClients, daysuntilnextreminder, numberOfreminder, lineItems, summary, active });
+        const newInvoiceTemplate = await InvoiceTemplate.create({ templatename, description, paymentMethod, sendEmailWhenInvCreated, messageForClient, payInvoicewithcredits, sendReminderstoClients, daysuntilnextreminder, numberOfreminder, lineItems, summary,clientNote, active });
 
         return res.status(201).json({ message: "InvoiceTemplate created successfully", newInvoiceTemplate });
 
