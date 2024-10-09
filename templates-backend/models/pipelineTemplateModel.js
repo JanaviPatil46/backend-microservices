@@ -9,10 +9,27 @@ const stageSchema = new mongoose.Schema({
     type: Array, // This can be of any type depending on your specific requirements
   },
   automations: [{
-    type: Array,
-    //  type: mongoose.Schema.Types.ObjectId, ref: 'Automations',
-     
+    automationId: {
+      type: mongoose.Schema.Types.ObjectId, ref: 'Automations',
+    },
+
+    conditions: [{
+      type: Array,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'tag',
+    }],
+
+    templates: {
+      templateName: {
+        type: String,
+      },
+      templateId: {
+        type: mongoose.Schema.Types.ObjectId,
+      },
+    },
+
   }],
+
   automove: {
     type: Boolean,
   }
