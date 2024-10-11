@@ -9,10 +9,10 @@ const stageSchema = new mongoose.Schema({
     type: Array, // This can be of any type depending on your specific requirements
   },
   automations: [{
-    automationId: {
-      type: mongoose.Schema.Types.ObjectId, ref: 'Automations',
-    },
 
+    action: {
+      type: String,
+    },
     conditions: [{
       type: Array,
       type: mongoose.Schema.Types.ObjectId,
@@ -20,10 +20,10 @@ const stageSchema = new mongoose.Schema({
     }],
 
     templates: {
-      templateName: {
+      label: {
         type: String,
       },
-      templateId: {
+      value: {
         type: mongoose.Schema.Types.ObjectId,
       },
     },
@@ -35,7 +35,9 @@ const stageSchema = new mongoose.Schema({
   }
 });
 
-
+// automationId: {
+//   type: mongoose.Schema.Types.ObjectId, ref: 'Automations',
+// },
 
 
 const pipelineSchema = new mongoose.Schema(
